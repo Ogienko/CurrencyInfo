@@ -1,0 +1,24 @@
+﻿@using CurrencyInfo.Models;
+@using System.Collections.Generic;
+
+@model ICollection<Currency>
+
+<table class="table table-striped text-center">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Количество</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Volume</td>
+                <td>@String.Format("{0:0.00}", item.Price.Amount)</td>
+            </tr>
+        }
+    </tbody>
+</table>
